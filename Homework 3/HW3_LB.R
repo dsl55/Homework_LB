@@ -12,6 +12,9 @@ whereis <- function(pattern, word){
 }
 whereis('I', 'Im lost')
 
+################3
+# Don't forget to include the description
+
 #' @param x object that will be replicated
 #' @param y number of times it will be replicated
 repetition <- function(x, y){
@@ -35,7 +38,7 @@ add(l,b)
 #' @param f A random number between 0 and 1.
 #' @param g A random number between 0 and 1.
 #' @return The maximum of {f} and {g}.
-max(f, g)<- function(x, y) 
+max(f, g)<- function(x, y)
 
 #' @param  A number.
 #' @param b A number.

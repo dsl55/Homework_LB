@@ -1,0 +1,7 @@
+Nice work and I like that you used the R script. The way you define the p
+as being random was done by others, but something I realized while reading
+your work was that, if u is fixed outside the loop and p is randoml chosen inside the
+loop, then they simply switch roles! Try thinking about a random variable that
+takes value 0 with probability u and 1 otherwise! Just found that interesting
+
+In any case, good work over all!
