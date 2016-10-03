@@ -28,9 +28,9 @@ abline(lm(out[,2]~out[,1]), col="red")
 
 # Our data set is named `out`, which we split into y and X
 y <- out[, 2]
-X <- cbind(rep(1, N),out[, 1])  ##The only significant modification has to be 
-#made at this point: a column of "1" is 
-#added to X 
+X <- cbind(rep(1, N),out[, 1])  ##The only significant modification has to be
+#made at this point: a column of "1" is
+#added to X
 
 # Now carry out intermediate calculations
 XT = t(X)
@@ -41,7 +41,7 @@ beta = invXTX %*% XTy
 
 
 plot(out)
-abline(lm(out[,2]~out[,1]), col="red") # regression line (y~x) 
+abline(lm(out[,2]~out[,1]), col="red") # regression line (y~x)
 abline(a=beta[1], b=beta[2], col="blue")
 
 #Question 3
@@ -63,6 +63,8 @@ S<- mvrnorm(N, mu = MU, Sigma = SIGMA)
 
 
 Y<-S[, 1]
+######### Comment
+# Just as a note you can also use slice notation 2:3 to select columns
 X<- cbind(rep(1, N), S[, c(2, 3)])
 X1<-S[, 2]
 X2<-S[, 3]
@@ -84,7 +86,7 @@ beta
 
 mat<-cbind(model$coefficients, beta)
 print(mat)
- 
+
 mat[,1]==mat[,2]
 
 
@@ -95,23 +97,23 @@ mat[,1]==mat[,2]
 
 
 
-general_OLS<-function(nvar, 
-                      MU,   
+general_OLS<-function(nvar,
+                      MU,
                       SIGMA,
-                      N    
+                      N
 ){
-  
-  
-  
+  # Comment: unnecessary white space
+
+
   if(is.na(nvar)){
     nvar<-floor(runif(1,0,1)*100+2)
   }
-  
+
   if(is.na(MU)){
     MU<-runif(nvar, 5, 25)
   }
-  
-  
+
+
   if(is.na(SIGMA)){
     coeff_sigma<- runif(nvar*nvar, 0, 1)
     SIG<- matrix(coeff_sigma, ncol = nvar, nrow = nvar)
@@ -119,10 +121,10 @@ general_OLS<-function(nvar,
   }
   if(is.na(N)){
     N<-floor(runif(1,0,1)*1000+5*nvar)
-  } 
-  
+  }
+
   sample<- mvrnorm(N, mu = MU, Sigma = SIGMA)
-  
+
   Y<- sample[, 1]
   X<- cbind(rep(1, N), sample[, c(2:(nvar))])
   XT = t(X)
@@ -131,10 +133,10 @@ general_OLS<-function(nvar,
   XTy = XT%*%Y
   beta = invXTX %*% XTy
   return(beta)
-  
+
   if(nvar == 2){
     graph<-plot(sample)
-    abline(lm(sample[,2]~sample[,1]), col="red") 
+    abline(lm(sample[,2]~sample[,1]), col="red")
     abline(a=beta[1], b=beta[2], col="blue")
   }
   if(nvar == 3){
@@ -145,7 +147,3 @@ general_OLS<-function(nvar,
 }
 
 general_OLS(nvar = 2, MU = NA, SIGMA = NA, N = NA)
-
-
-
-
