@@ -1,0 +1,13 @@
+Package: HW_5
+Title: Square
+Version: 0.0.0.9000
+Authors@R: person(„Luis“, „Bosshart“, email = „luis.bosshart@sciencespo.fr“, role = c("aut", "cre"))
+Description: Gives the square of a given number
+Depends:
+    R (>= 3.3.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
+YEAR: 2016
+COPYRIGHT HOLDER: Luis Bosshart
